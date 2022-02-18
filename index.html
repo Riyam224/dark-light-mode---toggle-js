@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Beauty dark model </title>
+</head>
+
+<body>
+    <section>
+        <div class="toggle-btn">
+            <i class="fa fa-adjust"></i>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="content-img">
+                    <img src="https://images.pexels.com/photos/8680270/pexels-photo-8680270.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                </div>
+                <div class="content-text">
+                    <h1 class="title">Beauty within</h1>
+                    <h2 class="subtitle">Unleash your inner beauty</h2>
+                    <p class="desc1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae voluptas
+                        corporis dignissimos libero nobis, veniam a temporibus illum, facilis possimus perspiciatis? Id
+                        esse earum ipsam delectus nisi incidunt optio consequatur.</p>
+                    <p class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae voluptas
+                        corporis dignissimos libero nobis, veniam a temporibus illum, facilis possimus perspiciatis? Id
+                        esse earum ipsam delectus nisi incidunt optio consequatur.</p>
+                    <a href="#" class="btn">Learn More &rarr; </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- js  -->
+
+    <script>
+
+
+        let body = document.body;
+        let toggleBtn = document.querySelector('.toggle-btn');
+        let currentTheme = localStorage.getItem('currentTheme')
+
+        if (currentTheme) {
+            body.classList.add('dark-theme')
+        }
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            if (body.classList.contains('dark-theme')) {
+
+                localStorage.setItem('currentTheme', 'themeActive')
+            }
+            else {
+                localStorage.removeItem('currentTheme')
+            }
+        })
+
+    </script>
+</body>
+
+</html>
